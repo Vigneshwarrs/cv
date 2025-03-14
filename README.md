@@ -22,7 +22,7 @@ Check out my portfolio live at: [Portfolio Website](https://your-live-link.com)
 
 ## 📸 Screenshots
 ![Portfolio Home](./asserts/home.png)
-![Projects Section](./asserts/projects.png)
+![Projects Section](./asserts/project.png)
 
 ## 📜 How to Run Locally
 ```sh
