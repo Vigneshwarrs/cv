@@ -1,0 +1,157 @@
+/* Root Variables */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #007bff;
+    --gradient-1: #007bff;
+    --gradient-2: #6a11cb;
+    --gradient-3: #ff758c;
+    --card-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    --border-color: #007bff;
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #E0E0E0;
+    --primary-color: #0d6efd;
+    --gradient-1: #0d6efd;
+    --gradient-2: #a133ff;
+    --gradient-3: #ff4f7b;
+    --card-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    --border-color: #0d6efd;
+}
+
+
+/* Global Styles */
+* {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Rounded Border */
+.rounded-circle {
+    border: 5px solid var(--border-color);
+}
+
+/* Card */
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: var(--card-shadow);
+}
+
+/* Navbar */
+.navbar, .fullscreen {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.85);
+    transition: background 0.3s ease-in-out;
+}
+
+.navbar-dark {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    transition: background 0.3s ease-in-out;
+  }
+
+[data-theme="dark"] .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar .nav-link, .navbar-brand {
+    color: var(--text-color) !important;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+    text-decoration: underline;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Image */
+.card-img-top {
+    height: 300px;
+    overflow: hidden;
+}
+
+.card-img-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Fullscreen Section */
+.fullscreen {
+    background: linear-gradient(to bottom, var(--bg-color), rgba(0, 0, 0, 0.1));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+}
+
+/* Contact Form */
+#contact-form input, #contact-form textarea {
+    transition: all 0.3s ease-in-out;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Status Message */
+.status-message {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.status-message.show {
+    opacity: 1;
+}
+
+@keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  #typing-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid white;
+    width: 0;
+    animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+  }
